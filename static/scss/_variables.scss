@@ -3,6 +3,7 @@
 :root {
   --primary: #FFFAE3;
   --secondary: #F7567C;
+  --secondary-hover: #e88a9d;
   --tertiary: #99E1D9;
   --text: #5D576B;
   --text-light: #fff;
@@ -10,7 +11,7 @@
   --background: #FFFAE3;
   --background-dark: #5D576B;
   --background-light: #FCFCFC;
-  --box-shadow: .1rem .3rem 2rem .1rem rgba(16, 49, 59, 0.62);
+  --box-shadow: 1rem 1rem 2rem 0rem rgba(162, 148, 66, 0.62);
 
   --radius-round: 50%;
   --radius-sm: 1rem;
@@ -19,7 +20,7 @@
   --ease: ease-in-out;
   --duration: .3s;
 
-  --placeholder: #d3d3d3;
+  --placeholder: #f3f3f3;
 
   --font-stack: 'Nunito', Arial, monospace, sans-serif;
   --font-heading: 'Genty sans', Arial, monospace, sans-serif;

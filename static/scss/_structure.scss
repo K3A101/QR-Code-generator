@@ -1,111 +1,188 @@
 @use 'helpers/mixins' as *;
 
 html {
-  font-size: 62.5%; // Set default px to 10px, so 16px is 1.6rem
-  scroll-behavior: smooth;
+    font-size: 62.5%; // Set default px to 10px, so 16px is 1.6rem
+    scroll-behavior: smooth;
 }
 
 html,
 body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: var(--font-stack);
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-size: 1.6rem;
-  min-height: 100%;
-  font-style: normal;
-  background: var(--primary);
-  color: var(--text);
+    font-family: var(--font-stack);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 1.6rem;
+    min-height: 100%;
+    font-style: normal;
+    background: var(--primary);
+    color: var(--text);
+}
+
+.text-center {
+    text-align: center;
 }
 
 header#top {
-  background-color: white;
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 150; // higher z-index than nav.off-canvas-nav .menu
+    background-color: white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 150; // higher z-index than nav.off-canvas-nav .menu
 }
 
 header#top,
 footer#bottom>*,
 .layout-grid {
-  --padding-inline: 3rem;
-  --content-max-width: 60rem;
-  --breakout-max-size: 126rem;
-  --breakout-size: calc((var(--breakout-max-size) - var(--content-max-width)) / 2);
-  display: grid;
-  grid-template-columns:
-    [full-width-start] minmax(var(--padding-inline), 1fr) [breakout-start] minmax(0, var(--breakout-size)) [content-start] min(100% - (var(--padding-inline) * 2), var(--content-max-width)) [content-end] minmax(0, var(--breakout-size)) [breakout-end] minmax(var(--padding-inline), 1fr) [full-width-end];
-
-  @include respond-to(up-to-sm) {
-    --padding-inline: 1.5rem;
-  }
-
-  @include respond-to(from-md) {
-    --content-max-width: 70rem;
     --padding-inline: 3rem;
-  }
-
-  @include respond-to(from-lg) {
-    --content-max-width: 110rem;
-    --breakout-max-size: 168rem;
-  }
-
-  @include respond-to(from-xxl) {
-    --content-max-width: 110rem;
-  }
-
-  &.two-third {
-    --content-max-width: 108rem;
-    --breakout-max-size: 128rem;
-  }
-
-  &.half {
-    --content-max-width: 72rem;
-    --breakout-max-size: 84rem;
-  }
-
-  > :not(.breakout, .full-width) {
-    grid-column: content;
-  }
-
-  >.breakout {
-    grid-column: breakout;
-  }
-
-  >.full-width {
-    grid-column: full-width;
-  }
-
-  img.wrapper-background {
-    grid-column: auto;
-  }
+    --content-max-width: 60rem;
+    --breakout-max-size: 126rem;
+    --breakout-size: calc((var(--breakout-max-size) - var(--content-max-width)) / 2);
+    display: grid;
+    grid-template-columns:
+    [full-width-start] minmax(var(--padding-inline), 1fr) [breakout-start] minmax(0, var(--breakout-size)) [content-start] min(100% - (var(--padding-inline) * 2), var(--content-max-width)) [content-end] minmax(0, var(--breakout-size)) [breakout-end] minmax(var(--padding-inline), 1fr) [full-width-end];
+    
+    @include respond-to(up-to-sm) {
+        --padding-inline: 1.5rem;
+    }
+    
+    @include respond-to(from-md) {
+        --content-max-width: 70rem;
+        --padding-inline: 3rem;
+    }
+    
+    @include respond-to(from-lg) {
+        --content-max-width: 110rem;
+        --breakout-max-size: 168rem;
+    }
+    
+    @include respond-to(from-xxl) {
+        --content-max-width: 110rem;
+    }
+    
+    &.two-third {
+        --content-max-width: 108rem;
+        --breakout-max-size: 128rem;
+    }
+    
+    &.half {
+        --content-max-width: 72rem;
+        --breakout-max-size: 84rem;
+    }
+    
+    > :not(.breakout, .full-width) {
+        grid-column: content;
+    }
+    
+    >.breakout {
+        grid-column: breakout;
+    }
+    
+    >.full-width {
+        grid-column: full-width;
+    }
+    
+    img.wrapper-background {
+        grid-column: auto;
+    }
 }
 
-footer#bottom {
-  background: var(--primary);
 
-  .footer-content {
+.card-container {
     display: grid;
-    grid-template-columns: 1fr;
-
-    @include respond-to(from-md) {
-      grid-template-columns: 1fr 1fr;
+    place-content: center;
+    place-items: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    
+    .card {
+        background: var(--background-light);
+        border-radius: var(--radius-md);
+        box-shadow: var(--box-shadow);
+        padding: 3rem;
+        
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            
+            .code-preview {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+        }
+        .generator-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            width: 100%;
+            
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                
+                label{
+                    margin-bottom: 1rem;
+                }
+                input[type="text"] {
+                    border:0;
+                    border-bottom: .2rem solid var(--secondary);
+                    border-radius: .5rem;
+                    appearance: none;
+                    -webkit-appearance: none;
+                    background: var(--background-light);
+                    background: var(--placeholder);
+                    color: #a29b9b;
+                    padding: 1.6rem 4rem;
+                    
+                    
+                    &::placeholder {
+                        color: var(--secondary-hover);
+                    }
+                    
+                }
+                
+                .button {
+                    margin-top: 3rem;
+                }
+                
+            }
+        }
     }
+    
+    
+}
 
-    @include respond-to(from-lg) {
-      grid-template-columns: 1fr 1fr 1fr;
+
+footer#bottom {
+    background: var(--primary);
+    
+    .footer-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        
+        @include respond-to(from-md) {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        @include respond-to(from-lg) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
     }
-  }
-
-  .copyright {
-    text-align: center;
-    color: var(--text-light);
-  }
+    
+    .copyright {
+        text-align: center;
+        color: var(--text-light);
+    }
 }

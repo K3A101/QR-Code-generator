@@ -1,15 +1,14 @@
 @use 'helpers/mixins' as *;
 
-h1 {
-    font-family: var(--font-heading);
-}
-
 h1,h2,h3,h4,h5,h6 {
     font-family:  var(--font-heading);
 }
 
 h1 {
     font-size: 6rem;
+    margin: 0 0 1.6rem;
+    font-family: var(--font-heading);
+    
 }
 
 h3 {
@@ -24,6 +23,39 @@ h3 {
     justify-content: center;
     height: auto;
     transition: all var(--ease) var(--duration);
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    padding: 1.6rem 4rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    cursor: pointer;
+    text-decoration: none;
+
+    &.primary {
+        background: var(--secondary);
+        color: var(--primary);
+
+        &:hover, &:focus {
+            &:not(.no-hover){
+                background: var(--background-dark);
+            }
+        }
+    }
+    
+    &.outlined {
+        border: .2rem solid var(--secondary);
+        color: var(--secondary);
+        
+        &:hover, &:focus {
+            &:not(.no-hover){
+                border: .2rem solid var(--background-dark);
+                color: var(--text);
+            }
+        }
+    }
+
 
     svg use {
         transition: all var(--ease) var(--duration);
@@ -32,9 +64,13 @@ h3 {
     @include respond-to(from-sm) {
         width: fit-content;
     }
-
-    &:hover, &:focus {
-
-    }
 }
 
+
+.cta-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+}

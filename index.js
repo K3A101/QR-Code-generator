@@ -22,7 +22,6 @@ app.get('/', function(req, res){
 
 app.post('/', function(req, res){
 	const url = req.body.url;
-	console.log(url);
 	if(url){
 		qr_code.toDataURL(url, function(err, src){
 			if(err){res.send(err); console.log(err);}
