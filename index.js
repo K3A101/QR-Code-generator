@@ -45,6 +45,6 @@ app.get('/download',function(req,res){
 	res.download(req.query.file_path);
 })
 
-app.listen(3000,function(){
+app.listen(port,function(){
 	console.log(`Server listing  http://localhost:${port}`);
 });

@@ -8,6 +8,10 @@ h1 {
   font-family: var(--font-heading);
 }
 
+h2 {
+  margin-bottom: 0;
+}
+
 h3 {
   font-size: 2rem;
   margin-top: 0;
