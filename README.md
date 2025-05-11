@@ -1,4 +1,4 @@
-# Node-JS-Simple-QR-Code-Generator-and-Download
+# Cutesy QR CODE generator
 
 This is a code generator where users can generate a qr code.
 
