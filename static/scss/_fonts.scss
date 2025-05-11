@@ -1,0 +1,43 @@
+@use 'helpers/mixins' as *;
+
+@font-face {
+  font-display: swap;
+  font-family: 'Minecraft Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/minecraft/Minecraft-Regular.woff2') format('woff2'),
+url('../fonts/minecraft/Minecraft-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Minecraft Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/minecraft/Minecraft-Bold.woff2') format('woff2'),
+  url('../fonts/minecraft/Minecraft-Bold.woff') format('woff');}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Minecraft BoldItalic';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/to-do-list/static/fonts/minecraft/Minecraft-Regular.woff2') format('woff2'),
+  url('/to-do-list/static/fonts/minecraft/Minecraft-BoldItalic.woff') format('woff');}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Minecraft Italic';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/minecraft/Minecraft-Italic.woff2') format('woff2'),
+  url('../fonts/minecraft/Minecraft-Italic.woff') format('woff');}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Minecraft Heading';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/minecraft/MinecraftTen.woff2') format('woff2'),
+  url('../fonts/minecraft/MinecraftTen.woff') format('woff');}
+

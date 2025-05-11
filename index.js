@@ -1,10 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const qr_code = require('qrcode');
+const path = require("path");
+const port = 3000
+
 
 const app = express();
+app.use(express.static(path.resolve('static')));
 
-app.set('view engine','ejs');
+// Set view engine
+app.set("views", path.join(__dirname, "views"));
+app.set('view engine', 'ejs');
+
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
@@ -19,7 +26,7 @@ app.post('/', function(req, res){
 	if(url){
 		qr_code.toDataURL(url, function(err, src){
 			if(err){res.send(err); console.log(err);}
-			var file_path = "store/"+ Date.now() +".png";
+			let file_path = "store/"+ Date.now() +".png";
 			qr_code.toFile(file_path,url, {
 			  color: {
 			    dark: '#000',  // Black dots
@@ -40,5 +47,5 @@ app.get('/download',function(req,res){
 })
 
 app.listen(3000,function(){
-	console.log('Server listing on 3000');
+	console.log(`Server listing  http://localhost:${port}`);
 });

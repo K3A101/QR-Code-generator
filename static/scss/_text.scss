@@ -1,0 +1,58 @@
+@use 'helpers/mixins' as *;
+
+h1 {
+    font-family: var(--font-heading);
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h3 {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+
+[class*="button"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    transition: all var(--ease) var(--duration);
+
+    svg use {
+        transition: all var(--ease) var(--duration);
+    }
+
+    @include respond-to(from-sm) {
+        width: fit-content;
+    }
+
+    &:hover, &:focus {
+        background: var(--background-dark-hover);
+
+    }
+}
+
+
+.back-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background-light);
+    border-radius: var(--radius-round);
+    block-size: 4.8rem;
+    aspect-ratio: 1/1;
+    margin: 1rem;
+
+    svg  {
+        stroke: var(--primary);
+    }
+
+    &:hover, &:focus {
+       svg  {
+        stroke: var(--background-light);
+       }
+    }
+}

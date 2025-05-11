@@ -1,0 +1,28 @@
+@use 'helpers/mixins' as *;
+
+:root {
+  --primary: #6e8344;
+  --primary-alt-2: #90a763;
+  --primary-alt-3: #63a76c;
+  --secondary: blue;
+  --tertiary: green;
+  --text: black;
+  --text-light: #fff;
+  --link: black;
+  --background: #cfd6be;
+  --background-dark: #2e3027;
+  --background-dark-hover: #62674f;
+  --background-light: #f7fbed;
+  --border: #b6c1a1;
+  --box-shadow: .1rem .3rem 2rem .1rem rgba(16, 49, 59, 0.62);
+
+  --radius-round: 50%;
+
+  --ease: ease-in-out;
+  --duration: .3s;
+
+  --placeholder: #d3d3d3;
+
+  --font-stack: 'Minecraft Regular', Arial, monospace, sans-serif;
+  --font-heading: 'Minecraft Heading', Arial, monospace, sans-serif;
+}

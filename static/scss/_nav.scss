@@ -1,0 +1,6 @@
+@use 'helpers/mixins' as *;
+
+nav {
+  &.header-nav {}
+  &.mobile-nav {}
+}
